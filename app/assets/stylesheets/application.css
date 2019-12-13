@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+  body:not(.modal-open){
+    padding-right: 0px !important;
+  }
+
+ .main_image{
+   background-image: url('/upload/2.jpeg');
+   background-size: cover;
+   height: 720px;
+ }
+ .main_row_with_image{
+   width: 100%;
+ }
+ .navbar-links,.navbar-button{
+   color: white;
+   font-family: Righteous;
+ }
+ .search-card{
+  width: 27rem;
+  margin-top: 4rem;
+  height: 30rem;
+  margin-left: 4rem;
+ }
+ .search-card-title, .explore-airbnb-heading,.cards-div-heading,.second-cards-div-heading{
+  font-family: Cabin;
+  color:#4D5656;
+  font-weight: bold;
+  font-size: 2rem;
+ }
+ .search-card-button{
+  float: right;
+  background-color: #EC7063;
+  color: white;
+  font-weight: bold;
+ }
+ .search-form{
+  padding-top: 1rem;
+  font-family: Kanit;
+  font-size: 1rem;
+ }
+ .main-image-bottom-link{
+  color: white;
+  float: right;
+  padding-top: 3rem;
+
+ }
+ .hyper-link-container{
+   margin-top: 2rem;
+ }
+
+ .explore-airbnb-column{
+
+  height: 6rem;
+  box-shadow: 11px 10px 5px -7px grey;
+  margin-right: 1rem;
+  width: 375px;
+  margin-bottom: 2rem;
+
+  
+ }
+ .explore-airbnb-column a{
+   color: black;
+ }
+ .explore-airbnb-image{
+  background-size: cover;
+  height: 100%;
+  width: 7rem;
+ }
+
+ .second-background-image{
+  background-image: url('/upload/8.webp');
+  background-size: cover;
+  background-position: center;
+  height: 340px;
+  width: 100%;
+ }
+ .second-background-heading1,.second-background-heading2,.second-background-heading3{
+   color: white;
+   margin-left: 4rem;
+
+ }
+ .second-background-heading1{
+   padding-top: 3rem;
+ }
+ .second-background-heading3{
+  font-weight: bold;
+ }
+ .second-background-heading2{
+   font-family: Great Vibes;
+   font-size: 85px;
+ }
+ .second-background-button{
+  color: black;
+  margin-left: 4rem;
+  height: 3rem;
+  margin-top: 2rem;
+ }
+ .cards-div-heading2,.cards-div-heading{
+  margin-left: 4rem;
+ }
+ .cards-div-heading, .second-cards-div-heading{
+   margin-top: 3rem;
+ }
+ .custom-cards-1{
+   width: 15rem;
+   margin-top: 2rem;
+   border: none;
+ }
+ .cards-container,.hyper-link-container{
+  width: fit-content;
+ }
+ .custom-cards-1-image{
+    height: 280px;
+ }
+ .custom-card1-title{
+   font-weight: bold;
+   font-size: 0.8rem;
+   padding-top: 1rem;
+ }
+ .custom-cards-row,.second-cards-container{
+  padding: 0px 85px;
+  width: fit-content;
+ }
+ .custom-second-cards-row{
+  padding: 0px 0px;
+  width: fit-content;
+ }
+
+ .navbar-button{
+  background: transparent;
+
+ }
+ .facebook-button, .google-button,.email-button, .login-button{
+    width: 460px;
+    font-weight: bold;
+    border: 0;
+    margin-bottom: 0.5rem;
+ }
+ .google-button{
+  background-color: white;
+  color: black;
+  border: 1px solid grey;
+
+ }
+ .facebook-button{
+  background-color: #2874A6;
+  color: white;
+ }
+ .email-button,  .login-button{
+   background-color: #DC143C;
+   color: white;
+ }
+ .login-modal-forgot-password{
+  display: inherit;
+  color: green;
+  font-weight: bold;
+ }
+ .custom-modal-footer{
+  justify-content: flex-start;
+  margin-left: 2rem;
+ }
+ .explore-airbnb-row{
+   padding: 0px 82px;
+ }
+ .login-button{
+   margin-top: 1rem;
+ }
+ .login-modal-forgot-password{
+   padding: 1rem;
+   text-align: center;
+ }
+ a:not([href]):not([tabindex]) {
+  color: white;
+  text-decoration: none;
+}
+.custom-cards-col, .custom-cards-1-body{
+  padding: 0;
+}
+.custom-cards-1{
+ padding-right: 1rem;
+}
+.explore-airbnb-column img{
+  padding-right: 1rem;
+}
+
+/* .custom-cards-col:nth-last-child(-n+10) {
+  display: none;
+} */
+.cards-container-loadmore-button{
+  margin-left: 4rem;
+  color: red;
+  background: transparent;
+}
+.custom-second-cards{
+  width: 18rem;
+  border: none;
+  height: 20rem;
+  margin: 0rem;
+  padding: 0rem;
+  
+}
+.custom-second-cards-image{
+  height: 200px;
+}
+.custom-second-cards-col,.custom-second-cards-body{
+  padding: 0;
+}
+.custom-second-card-title{
+  color: gray;
+  font-size: 11.8px;
+  padding-top: 2px;
+  margin: 0;
+  font-family: Roboto Mono;
+}
+.custom-second-card-description,.custom-second-card-price{
+  padding-top: 1px;
+  margin: 0;
+  font-family: Source Code Pro;
+  font-size: 14px;
+}
+.custom-second-card-price{
+  font-weight: bolder;
+}
+
+.custom-second-cards-second-row{
+  height: 25px;
+}
+.custom-second-cards-star{
+  color:purple;
+  padding-right: 5px;
+}
+.custom-second-card-super-host, .custom-second-card-plus{
+  background: transparent;
+  height: 22px;
+  width: 78px;
+  font-size: 12px;
+  border: 1px solid black;
+}
+.custom-second-card-rating{
+  font-size: 14px;
+}
+.move-right{
+  text-align: right;
+}
+.custom-second-card-plus{
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  width: 54px;
+  font-size: 13px;
+  border: 0;
+}
+.google-icon{
+  color: orangered
+}
+.email-icon, .google-icon, .facebook-icon{
+  margin-right: 1rem;
+}
+fieldset.title {
+  border-top: 1px solid #aaa;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  display: block;
+  text-align: center;
+}
+
+div.hr-or {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+  height: 0px;
+  line-height: 0px;
+}
+
+div.hr-or:before {
+  content: 'or';
+  background-color: #fff;
+}
+

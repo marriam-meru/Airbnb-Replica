@@ -1,0 +1,2 @@
+class SecondCardImage < ApplicationRecord
+end

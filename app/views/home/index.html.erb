@@ -1,0 +1,244 @@
+<div class="fluid-container">
+  <div class = "row main_row_with_image">
+    <div class = "col-lg-12 main_image">
+      <nav class="navbar navbar-expand-lg bg-faded">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link navbar-links" href="#">Host an experience</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link navbar-links" href="#">Host a home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link navbar-links" href="#">Help</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link navbar-links" data-toggle="modal" data-target="#SignUpModal">Sign Up</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link navbar-links" data-toggle="modal" data-target="#LoginModal">Login</a>   
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="card search-card">
+        <div class="card-body">
+          <h5 class="card-title search-card-title">Book unique places to stay and things to do.</h5>
+          <form class="search-form">
+            <div class="form-group">
+              <label for="InputWhere">WHERE</label>
+              <input type="text" class="form-control" id="InputWhere" placeholder="Anywhere">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6"> 
+                  <label for="InputCheckin">CHECK-IN</label>
+                  <input type="text" class="form-control" id="InputCheckin" placeholder="mm/dd/yyyy">
+                </div>
+                <div class="col-lg-6">
+                  <label for="InputCheckout">CHECK-OUT</label>
+                  <input type="text" class="form-control" id="InputCheckout" placeholder="mm/dd/yyyy">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Select1">Guests</label>
+              <select class="form-control" id="Select1">
+                <option>Adult</option>
+                <option>Children</option>
+                <option>Infants</option>
+              </select>
+            </div>
+            <button type="Search" class="btn search-card-button">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="align-self-end ">
+        <a href="#" class="main-image-bottom-link">Over 3000 places to visit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fluid-container hyper-link-container">
+  <h3 class="explore-airbnb-heading">Explore Airbnb</h3>
+  <div class="row explore-airbnb-row">
+    <div class="explore-airbnb-column border rounded">
+      <a href="#"><img src="/upload/3.jpeg" class="explore-airbnb-image">Stays</a> 
+    </div>
+    <div class="explore-airbnb-column border rounded">
+      <a href="#"><img src="/upload/4.jpeg" class="explore-airbnb-image">Experiences</a>
+    </div>
+    <div class="explore-airbnb-column border rounded">
+      <a href="#"><img src="/upload/5.jpeg" class="explore-airbnb-image">Adventures</a>
+    </div>
+  </div>
+</div>
+
+<div class="fluid-container">
+  <div class = "row main_row_with_image">
+    <div class = "col-lg-12 second-background-image">
+      <h4 class="second-background-heading1">Introducing</h4>
+      <h2 class="second-background-heading2">Cooking</h2>
+      <h4 class="second-background-heading3">on Airbnb Experiences</h4>
+      <button type="button" class="btn btn-light second-background-button border rounded">Learn More</button>
+    </div>
+  </div>
+</div>
+
+<div class="fluid-container cards-container">
+  <h3 class="cards-div-heading">Introducing Airbnb Adventures</h3>
+  <h6 class="cards-div-heading2">Multi-day trips led by local experts—activities, meals, and stays included</h6>
+  <div class="row custom-cards-row">
+    <% @images.each do |image| %>
+      <div class="col custom-cards-col">
+        <div class="card custom-cards-1">
+          <div class="card-body custom-cards-1-body">
+            <%= image_tag image.image_name, class: 'card-img-top custom-cards-1-image'%>
+            <p class="custom-card1-title"><%= image.title.upcase %></p>
+            <p><%= image.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end%>
+  </div>
+  <button class="btn cards-container-loadmore-button">Load More..>></button>
+</div>
+
+<div class="fluid-container second-cards-container">
+  <h3 class="second-cards-div-heading">Places to stay around the world</h3>
+  <div class="row custom-second-cards-row">
+    <% @second_images.each do |image| %>
+      <div class="col custom-second-cards-col">
+        <div class="card custom-second-cards">
+          <div class="card-body custom-second-cards-body">
+            <%= image_tag image.imange_name, class: 'card-img-top custom-second-cards-image'%>
+            <div class="row custom-second-cards-second-row">
+              <% if image.super_host? %>
+                <div class="col-lg-3 pr-0"><button class="rounded custom-second-card-super-host">Super Host</button></div>
+                <div class="col-lg-6 pr-0 pl-3"><p class="custom-second-card-title"><%= image.title %></p></div>
+                <div class="col-lg-3"><p class="custom-second-card-rating"><i class="far fa-star custom-second-cards-star"></i><%= image.rating %></p></div>
+              <% else %>
+                <div class="col-lg-8"><p class="custom-second-card-title"><%= image.title %></p></div>
+                <div class="col-lg-4"><p class="custom-second-card-rating move-right"><i class="far fa-star custom-second-cards-star"></i><%= image.rating %></p></div>
+              <% end %>
+              
+            </div>
+            <p class="custom-second-card-description"><%= image.description %></p>
+            <p><span class="custom-second-card-price">$<%= image.price %></span> / night</p>
+          </div>
+        </div>
+      </div>
+    <% end%>
+  </div>
+</div>
+
+<div class="fluid-container second-cards-container">
+  <h3 class="second-cards-div-heading">Stay with the Super Host</h3>
+  <div class="row custom-second-cards-row">
+    <% @third_images.each do |image| %>
+      <div class="col custom-second-cards-col">
+        <div class="card custom-second-cards">
+          <div class="card-body custom-second-cards-body">
+            <%= image_tag image.image_name, class: 'card-img-top custom-second-cards-image'%>
+            <div class="row custom-second-cards-second-row">
+              <% if image.super_host? %>
+                <div class="col-lg-3 pr-0"><button class="rounded custom-second-card-super-host">Super Host</button></div>
+                <div class="col-lg-6 pr-0 pl-3"><p class="custom-second-card-title"><%= image.title %></p></div>
+                <div class="col-lg-3"><p class="custom-second-card-rating"><i class="far fa-star custom-second-cards-star"></i><%= image.rating %></p></div>
+              <% elsif image.plus? %>
+                <div class="col-lg-2 pr-0"><button class="rounded custom-second-card-plus">Plus</button></div>
+                <div class="col-lg-7 pr-0 pl-4"><p class="custom-second-card-title"><%= image.title %></p></div>
+                <div class="col-lg-3"><p class="custom-second-card-rating"><i class="far fa-star custom-second-cards-star"></i><%= image.rating %></p></div>
+              <% else %>
+                <div class="col-lg-8"><p class="custom-second-card-title"><%= image.title %></p></div>
+                <div class="col-lg-4"><p class="custom-second-card-rating move-right"><i class="far fa-star custom-second-cards-star"></i><%= image.rating %></p></div>
+              <% end %>
+              
+            </div>
+            <p class="custom-second-card-description"><%= image.description %></p>
+            <p><span class="custom-second-card-price">$<%= image.price %></span> / night</p>
+          </div>
+        </div>
+      </div>
+    <% end%>
+  </div>
+</div>
+
+
+<div class="modal fade" id="SignUpModal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn facebook-button"><i class="fab fa-facebook-f facebook-icon"></i>Continue with Facebook</button>
+        <button type="button" class="btn google-button "><i class="fab fa-google google-icon"></i>Continue with Google</button>
+        <div class='hr-or'></div>
+        <button type="button" class="btn email-button "><i class="far fa-envelope email-icon"></i>Sign Up with Email</button>
+      </div>
+      <div class="modal-footer custom-modal-footer">
+        <p>Already have an account <a href="#">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="LoginModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= link_to user_facebook_omniauth_authorize_path , class:"btn facebook-button" do %>
+          <i class="fab fa-facebook-f facebook-icon"></i>Continue with Facebook
+        <% end %>
+        <%= link_to user_google_oauth2_omniauth_authorize_path , class:"btn google-button" do %>
+          <i class="fab fa-google google-icon"></i>Continue with Google
+        <% end %>
+        <form>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Enter Email" aria-label="Recipient's username">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="far fa-envelope"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Enter Password" aria-label="Recipient's username">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="ModalRememberMe">
+            <label class="form-check-label" for="ModalRememberMe">Remeber Me</label>
+          </div>
+          <button type="button" class="btn login-button ">Login</button>
+          <div class="col">
+            <a href="#" class="login-modal-forgot-password">Forgot Password</a>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer custom-modal-footer">
+        <p>Don’t have an account? <a href="#">Sign Up</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+

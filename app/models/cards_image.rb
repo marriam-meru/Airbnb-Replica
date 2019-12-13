@@ -1,0 +1,2 @@
+class CardsImage < ApplicationRecord
+end
